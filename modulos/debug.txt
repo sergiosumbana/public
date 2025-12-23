@@ -1,0 +1,18 @@
+Array
+(
+    [product_id] => 
+    [Descricao] => ccc
+    [product-barcod] => cccc
+    [fk_group] => 31
+    [product-units] => Kilogramas
+    [product-comment] => 
+    [product-taxe] => 17
+    [preco-custo-com-imposto] => 100
+    [imposto-custo] => 17.00
+    [preco-custo-sem-imposto] => 83.00
+    [preco-venda-com-imposto-input] => 600
+    [imposto-venda] => 17.00
+    [preco-venda-sem-imposto-input] => 583.00
+    [margem-lucro] => 500.00
+    [action] => create
+)

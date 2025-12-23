@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CYBER-GEST</title>
+    <link rel="stylesheet" href="css/Style.css">
+    <link rel="stylesheet" href="css/btnUser.css">
+    <link rel="stylesheet" href="css/user.css">
+    <link rel="stylesheet" href="css/product.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+
+</head>
+<body>
+ 
+    <nav class="slider">
+        <div class="btn-expandir " id="btn-exp">
+          <i class="bi bi-list"></i>
+        </div> <!--fim da sessao btn-expandir -->
+
+        <ul>
+       
+            <li class="item-menu ativo">
+                <a href="#">
+                    <span class="icon"><i class="bi bi-house"></i></span>
+                    <span class="txt-link">Home</span>
+                </a>
+            </li>
+
+            <li class="item-menu">
+                <a href="#">
+                    <span class="icon"><i class="bi bi-columns-gap"></i></span>
+                    <span class="txt-link">Relatorios</span>
+                </a>
+            </li>
+
+            <li class="item-menu">
+                <a href="#">
+                    <span class="icon"><i class="bi bi-bar-chart-line"></i></span>
+                    <span class="txt-link">Balance</span>
+                </a>
+            </li>
+
+            <li class="item-menu">
+                <a href="#">
+                    <span class="icon"><i class="bi bi-person-fill-gear"></i></i></span>
+                    <span class="txt-link">Users</span>
+                </a>
+            </li>
+
+            <li class="item-menu">
+                <a href="#">
+                    <span class="icon"><i class="bi bi-gear"></i></span>
+                    <span class="txt-link">Configuracoes</span>
+                </a>
+            </li>
+
+            <li class="item-menu">
+                <a href="#">
+                    <span class="icon"><i class="bi bi-chat-left-text"></i></span>
+                    <span class="txt-link">Mensagens</span>
+                </a>
+            </li>
+
+            <li class="item-menu">
+                <a href="#">
+                    <span class="icon"><i class="bi bi-box-arrow-left"></i></span>
+                    <span class="txt-link">Sair</span>
+                </a>
+            </li>
+        </ul>
+    </nav> <!-- fim do slider menu  -->
+
+    <div class="main-container">
+        <nav class="main">
+                                              <!-- Conteúdo da sua aplicação aqui -->
+<!-- ========================================================== USUARIO ================================================================== -->
+ <div class="user-main-form" hidden>
+
+        <div class="user-header">
+        <div class="row">
+            <div class="col-sm-4">
+
+            </div>
+            <div class="col-sm-4">
+                
+            </div>
+            <div class="col-sm-4"></div>
+        </div>
+       </div> <br>
+
+       <div class="container" style="text-align: center;">
+       <h1>GESTAO DE UTILIZADORES</h1><br>
+       </div>
+        <div class="row">
+
+         <div class="col-sm-8" id="user-form"> <!--div lateral do formulario do usuario -->
+            
+            <form action=""> <!-- INICIO DO FORMULARIO USER-->
+                 <span>
+                    <label for="user_name">Nome</label>
+                    <input type="text" class="form-control" placeholder="Nome" id="user_name">
+                </span> <br>
+
+                <span>
+                    <label for="user_surname">Apelido</label>
+                    <input type="text" class="form-control" placeholder="apelido" id="user_surname">
+                </span> <br>
+
+                <span>
+                    <label for="user_email">E-mail</label>
+                    <input type="email" class="form-control" placeholder="email" id="user_email">
+                </span> <br>
+
+                <span>
+                    <label for="user_profile">Perfil</label>
+                    <select type="form-select" class="form-control"  id="user_profile">
+                     
+                        <option value=" selected disabled>Selecione um perfil">Selecione um perfil</option>
+                        
+                        <option value="Administrador">Administrador</option>
+                        <option value="Editor">Editor</option>
+                        <option value="Operador">Operador</option>
+                        <option value="Visualizador"> &nbsp; Visualizador</option>
+                    </select>
+                </span> <br>
+                <span> <input type="radio">&nbsp;&nbsp;Activo</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <span style="color: red;"> <input type="radio"> &nbsp;&nbsp; Bloqueado </span> <br>
+            
+                <div class="user-btn">
+                   
+                    <div class="row">
+                        <div class="col-sm-6"><br>
+                             <button class="btn btn-default btn-block" id="user-btn-limpar">Limpar</button>
+                        </div>
+                        <div class="col-sm-6"><br>
+                            <button class="btn btn-success btn-block" id="user-btn-salvar">Salvar</button>
+                        </div>
+                    </div>
+                </div>
+                
+                </form> <!-- FIM DO FORMULARIO USER-->
+            </div>
+
+            <div class="col-sm-4" > <!-- DIV LATERAL ESQUERDO PARA DISPLAY DOS USUARIOS ATIVOS, INATIVOS E TOTAIS-->
+                <div class="user-form-right"> <!-- DIV INTERNA -->
+                    
+                    <br>
+                <!-- card to display all registred users-->
+                <div class="user-total">
+                    <div class="user-total-content">
+                        <p>Total de Usuarios</p> <br>
+                        <span class="glyphicon glyphicon-user" id="user-icon"></span>
+                        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;08</span>
+                    </div>
+                </div><br>
+
+                <!-- card to display all registred users-->
+                <div class="user-active">
+                    <div class="user-total-content">
+                        <p>Total de Usuarios Activos</p> <br>
+                        <span class="glyphicon glyphicon-user" id="user-icon"></span>
+                        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;08</span>
+                    </div>
+                </div><br>
+
+                <!-- card to display all registred users-->
+                <div class="user-bloqued">
+                    <div class="user-total-content">
+                        <p>Total de Usuarios Bloqueados</p> <br>
+                        <span class="glyphicon glyphicon-user" id="user-icon"></span>
+                        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;08</span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+        </div> <!-- end of class row-->
+
+        <br>
+        <div class="user-list">
+            <br>
+              <table class="table table-striped">
+                <tr>
+                    <td>Codigo</td>
+                    <td>Usuario</td>
+                    <td>E-mail</td>
+                    <td>Perfil</td>
+                    <td>Estado</td>
+                    <td>Actualizar</td>
+                    <td>Excluir</td>
+                </tr>
+                <tr>
+                    <td>021</td>
+                    <td>Stelio cumaio</td>
+                    <td>stelio@cybersys.co.mz</td>
+                    <td>Administrador</td>
+                    <td>Activo</td>
+                    <td><button>Actualizar</button></td>
+                    <td><button>Excluir</button></td>
+                </tr>
+                                <tr>
+                    <td>021</td>
+                    <td>Stelio cumaio</td>
+                    <td>stelio@cybersys.co.mz</td>
+                    <td>Administrador</td>
+                    <td>Activo</td>
+                    <td><button>Actualizar</button></td>
+                    <td><button>Excluir</button></td>
+                </tr>
+              </table>
+        </div>
+</div>  <!-- END OF USER-MAIN-FORM-->
+
+
+        <!-- ========================================================== GESTAO DE PRODUTOS ================================================================== -->
+
+<div class="product-main-form container-fluid mt-4">
+    <h2 class="text-center mb-4">🛒 Gestão de Produtos</h2>
+    <form>
+        <div class="row">
+            
+            <div class="col-lg-4 col-md-6 mb-3">
+                <fieldset class="p-3 border rounded shadow-sm h-100">
+                    <legend class="float-none w-auto px-2">Detalhes do Produto</legend>
+                    
+                    <div class="mb-3">
+                        <label for="product-description" class="form-label">Descrição</label>
+                        <input type="text" class="form-control" placeholder="Descrição do Produto" id="product-description" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="product-barcod" class="form-label">Código de Barras:</label>
+                        <input type="text" class="form-control" placeholder="Código de Barras" id="product-barcod">
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="product-group" class="form-label">Grupo de Produtos:</label>
+                        <select id="product-group" class="form-control" required>
+                            <option value="" disabled selected>Selecione um Grupo</option>
+                            <option value="Grupo 1">Grupo 1</option>
+                            <option value="Grupo 2">Grupo 2</option>
+                            </select>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="product-units" class="form-label">Unidade de Medida:</label>
+                        <select id="product-units" class="form-control" required>
+                            <option value="" disabled selected>Selecione a Unidade</option>
+                            <option value="Unidade">Unidade</option>
+                            <option value="Litros">Litros</option>
+                            <option value="Kilogramas">Kilogramas</option>
+                        </select>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="product-comment" class="form-label">Comentário:</label>
+                        <textarea class="form-control" id="product-comment" rows="3" placeholder="Observações adicionais sobre o produto"></textarea>
+                    </div>
+                </fieldset>
+            </div>
+            
+            <div class="col-lg-8 col-md-6 mb-3">
+                <fieldset class="p-3 border rounded shadow-sm h-100">
+                    <legend class="float-none w-auto px-2">Detalhes Financeiros e Fiscais</legend>
+
+                    <div class="row">
+                        <div class="col-lg-6 mb-3">
+                            <h5 class="text-primary mb-3">Preço de Custo</h5>
+
+                            <div class="mb-3">
+                                <label for="product-taxe" class="form-label">Taxa de Imposto (Vendas):</label>
+                                <select class="form-control" id="product-taxe" required>
+                                    <option value="" disabled selected>Selecione a Taxa</option>
+                                    <option value="16">16 (%)</option>
+                                    <option value="17">17 (%)</option>
+                                    <option value="ISENTO">ISENTO (ART 121/34-2023)</option>
+                                </select>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="preco-custo-sem-imposto" class="form-label">Custo **Sem** Imposto:</label>
+                                <input type="number" class="form-control" placeholder="Custo sem Imposto" id="preco-custo-sem-imposto" value="0.00" min="0" step="0.01">
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="imposto-custo" class="form-label">Imposto (Custo):</label>
+                                <input type="number" class="form-control bg-secondary-subtle" placeholder="Imposto Custo" id="imposto-custo" readonly>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="preco-custo-com-imposto" class="form-label">Custo **Com** Imposto:</label>
+                                <input type="number" class="form-control bg-secondary-subtle" placeholder="Custo Com Imposto" id="preco-custo-com-imposto" readonly>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6 mb-3">
+                            <h5 class="text-success mb-3">Preço de Venda</h5>
+
+                            <div class="mb-3">
+                                <label for="preco-venda-sem-imposto" class="form-label">Venda **Sem** Imposto:</label>
+                                <input type="number" class="form-control" placeholder="Venda Sem Imposto" id="preco-venda-sem-imposto-input" value="0.00" min="0" step="0.01">
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="imposto-venda" class="form-label">Imposto (Venda):</label>
+                                <input type="number" class="form-control bg-secondary-subtle" placeholder="Imposto Venda" id="imposto-venda" readonly>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="preco-venda-com-imposto" class="form-label">Venda **Com** Imposto:</label>
+                                <input type="number" class="form-control bg-secondary-subtle" placeholder="Venda Com Imposto" id="preco-venda-com-imposto-input" readonly>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label for="margem-lucro" class="form-label">Margem de Lucro (%)</label>
+                                <input type="number" class="form-control bg-info-subtle" placeholder="Margem de Lucro" id="margem-lucro" readonly>
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+            </div>
+            
+        </div>  
+        
+        <div class="buttons">
+        <deiv class="row">
+            <div class="col-md-6 mb-2"></div>
+            <div class="col-md-6 mb-2">
+               <button type="reset" class="btn btn-secondary w-100 mb-2" id="product-btn-limpar">
+                  <i class="bi bi-eraser"></i> Limpar Formulário
+               </button>
+                  
+               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+               
+                <button type="submit" class="btn btn-success w-100" id="product-btn-salvar">
+                    <i class="bi bi-floppy"></i> Salvar Produto
+                </button>  
+            </div>
+        </deiv>
+
+
+
+         
+        </div> 
+    </form>
+</div>
+
+       </nav>  <!-- fim da nav que main-->       
+ 
+    </div> <!-- end of main conteiner-->
+    
+    <script src="index.js"></script>
+    <script src="js/user.js"></script>
+</body>
+</html>
