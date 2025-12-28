@@ -57,14 +57,14 @@
                 </a>
             </li>
 
-            <!-- <li class="item-menu">
-                <a href="#">
+            <li class="item-menu">
+                <a href="fornecedor.php">
                     <span class="icon"><i class="bi bi-bar-chart-line"></i></span>
-                    <span class="txt-link">Balance</span>
+                    <span class="txt-link">Fornecedor</span>
                 </a>
             </li>
 
-            <li class="item-menu">
+            <!-- <li class="item-menu">
                 <a href="#">
                     <span class="icon"><i class="bi bi-person-fill-gear"></i></i></span>
                     <span class="txt-link">Users</span>

@@ -1,20 +1,7 @@
-/*let paginaAtual = 1;
-let termoPesquisa = "";
-
-document.getElementById("pesquisaProduto").addEventListener("input", function () {
-    termoPesquisa = this.value.trim();
-    paginaAtual = 1; // volta para a primeira página
-    carregarProdutos(paginaAtual, termoPesquisa);
-});*/
-
-
 
 document.addEventListener("DOMContentLoaded", () => {
     carregarProdutos(); // carrega todos por defeito
 });
-
-
-
 
 
 let paginaAtual = 1;
@@ -83,27 +70,9 @@ function carregarProdutos(page = 1, search = termoPesquisa) {
                 `;
             });
 
-            //gerarPaginacaoProdutos(resp.total, resp.limit, resp.page);
-            /*if (resp.total > resp.limit) {
-                gerarPaginacaoProdutos(resp.total, resp.limit, resp.page);
-            } else {
-                document.querySelector("#paginationProdutos").innerHTML = "";
-            }*/
-
-            // Sempre calcula total de páginas
-            /*let totalPaginas = Math.ceil(resp.total / resp.limit);
-
-            if (totalPaginas > 1) {
-                gerarPaginacaoProdutos(resp.total, resp.limit, resp.page);
-            } else {
-                document.querySelector("#paginationProdutos").innerHTML = "";
-            }*/
-
+            
             let totalPaginas = Math.ceil(resp.total / resp.limit);
             gerarPaginacaoProdutos(resp.total, resp.limit, resp.page);
-
-
-
 
 
         })
@@ -113,24 +82,6 @@ function carregarProdutos(page = 1, search = termoPesquisa) {
         });
 }
 
-
-/*function gerarPaginacaoProdutos(total, limit, page) {
-
-    let totalPaginas = Math.ceil(total / limit);
-    let pagination = document.querySelector("#paginationProdutos");
-
-    pagination.innerHTML = "";
-
-    for (let i = 1; i <= totalPaginas; i++) {
-        pagination.innerHTML += `
-            <li class="page-item ${i === page ? "active" : ""}">
-                <button class="page-link" onclick="carregarProdutos(${i}, termoPesquisa)">
-                    ${i}
-                </button>
-            </li>
-        `;
-    }
-}*/
 
 
 function gerarPaginacaoProdutos(total, limit, page) {
@@ -163,101 +114,6 @@ document.getElementById("searchProduto").addEventListener("input", e => {
     }, 300);
 });
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//let paginaAtual = 1;
-/*
-function carregarProdutos(page = 1) {
-
-
-
-    fetch(`modulos/get_produto.php?page=${page}`)
-        .then(res => res.json())
-        .then(resp => {
-
-            paginaAtual = resp.page;
-
-            let tbody = document.querySelector("#tableProdutos tbody");
-            tbody.innerHTML = "";
-
-            resp.data.forEach(prod => {
-                tbody.innerHTML += `
-                    <tr>
-                        <td>${prod.idproduct}</td>
-                            <td>${prod.Produto}</td>
-                            <td>${prod.Descricao}</td>
-                            <td>${prod.Barcod}</td>
-                            <td>${prod.unidade_medida}</td>
-                            <td>${prod.preco_custo_total}</td>
-                            <td>${prod.imposto_custo}</td>
-                            <td>${prod.preco_custo_sem_imposto}</td>
-                            <td>${prod.preco_venda_total}</td>
-                            <td>${prod.venda_sem_imposto}</td>
-                            <td>${prod.desconto}</td>
-                            <td>${prod.estado}</td>
-                            <td>${prod.data}</td>
-                            <td>${prod.grupo}</td>
-
-                        <td class="text-left">
-
-                            <button class="btn btn-warning btn-sm" onclick="editarProduto(${prod.idproduct})">
-                                <i class="bi bi-pencil"></i>
-                            </button>
-
-                            <button class="btn btn-danger btn-sm" onclick="eliminarProduto(${prod.idproduct})">
-                                <i class="bi bi-trash"></i>
-                            </button>
-
-                        </td>
-                    </tr>
-                `;
-            });
-
-            gerarPaginacaoProdutos(resp.total, resp.limit, resp.page);
-        })
-        .catch(error => console.error("Erro:", error));
-}
-
-// paginacao para produtos
-function gerarPaginacaoProdutos(total, limit, page) {
-
-    let totalPaginas = Math.ceil(total / limit);
-    let pagination = document.querySelector("#paginationProdutos");
-
-    pagination.innerHTML = "";
-
-    for (let i = 1; i <= totalPaginas; i++) {
-
-        pagination.innerHTML += `
-            <li class="page-item ${i === page ? "active" : ""}">
-                <button class="page-link" onclick="carregarProdutos(${i})">${i}</button>
-            </li>
-        `;
-    }
-}
-
-// chama ao iniciar
-carregarProdutos();
-*/
 
 
 //===========  funcao para carregar categorias para o select 
